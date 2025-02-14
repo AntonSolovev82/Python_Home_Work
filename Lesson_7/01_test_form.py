@@ -14,6 +14,7 @@ def test_form_submission():
         "first-name": "Иван",
         "last-name": "Петров",
         "address": "Ленина, 55-3",
+        "zip-code": "",
         "e-mail": "test@skypro.com",
         "phone": "+7985899998787",
         "city": "Москва",
