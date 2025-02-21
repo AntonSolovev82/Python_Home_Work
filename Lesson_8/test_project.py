@@ -2,7 +2,6 @@ import requests
 import pytest
 
 TOKEN = "Bi2ZOyXi8fmzpBwjZX5Vy7dlWXYUhXxkFpd1XgM-XQ1G9+LQJZnhKuXoogvr6sjB"
-AUTH_URL = "https://ru.yougile.com/api-v2/auth/keys"
 BASE_URL = "https://ru.yougile.com/api-v2/projects"
 
 HEADERS = {
@@ -23,12 +22,7 @@ PROJECT_DATA = {
     }
 }
 
-def test_get_token():
-    response = requests.post(AUTH_URL, json=AUTH_DATA)
-    assert response.status_code == 201
-    token = response.json().get('token')
-    print(f'Token: {token}')
-    return token
+
 def test_add_project():
     response = requests.post(BASE_URL, json=PROJECT_DATA, headers=HEADERS)
     assert response.status_code == 201
