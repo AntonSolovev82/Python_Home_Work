@@ -3,7 +3,6 @@ from sqlalchemy.sql import text
 
 
 class UserTable:
-    #Koнструктор
     def __init__(self):
         self.__scripts = {
             "select": "select * from users where user_id = :user_id",
