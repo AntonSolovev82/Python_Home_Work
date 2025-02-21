@@ -7,7 +7,7 @@ def users():
     user_table = UserTable()
     yield user_table
 
-def test_create_user(users, email, subject):
+def test_create_user(users):
     user_id = users.create_user('new_user@yandex.ru', 3)
     rows = users.get_user_list()
     for user in rows:
@@ -30,4 +30,4 @@ def test_create_user(users, email, subject):
         if user[0] == user_id:
             is_find = True
             break
-        assert is_find is False
+    assert is_find is False
